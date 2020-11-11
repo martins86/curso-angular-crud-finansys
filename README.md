@@ -34,3 +34,11 @@ File: angular.json
               "node_modules/chart.js/dist/chart.bundle.js"
             ]
 ```
+
+## Component pages/categories command
+
+```
+1 - create module/routing categories => ng g m pages/categories --routing
+2 - create componet caterory-list => ng g c pages/categories/caterory-list
+3 - create componet caterory-form => ng g c pages/categories/caterory-form
+```
