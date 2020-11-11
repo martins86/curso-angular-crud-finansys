@@ -1,19 +1,23 @@
 # Finansys
 
-## Dependencias:
-npm i jquery --save 
-npm i bootstrap --save
-npm i angular-imask --save
-npm i currency-formatter --save
-npm i moment --save
-npm i toastr --save
-npm i primeng --save
-npm i primeicons --save
-npm i angular-in-memory-web-api
-npm i chart.js --save
+## Dependencies/Install:
 
-## Imports:
-Arquivo: angular.json
+```
+  npm i jquery --save
+  npm i bootstrap --save
+  npm i angular-imask --save
+  npm i currency-formatter --save
+  npm i moment --save
+  npm i toastr --save
+  npm i primeng --save
+  npm i primeicons --save
+  npm i angular-in-memory-web-api
+  npm i chart.js --save
+```
+
+## Dependencies/Imports:
+
+File: angular.json
 
 ```
 			"styles": [
