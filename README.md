@@ -1,5 +1,8 @@
 # Finansys
 
+### URLs:
+BOOTSTRAP -	https://getbootstrap.com/docs/4.5/components/alerts/
+
 ## Dependencies/Install:
 
 ```
@@ -35,10 +38,11 @@ File: angular.json
             ]
 ```
 
-## Component pages/categories command
+## Commands
 
 ```
 1 - create module/routing categories => ng g m pages/categories --routing
 2 - create componet caterory-list => ng g c pages/categories/caterory-list
 3 - create componet caterory-form => ng g c pages/categories/caterory-form
+4 - create service category => ng g s pages/categories/shared/services/category
 ```
