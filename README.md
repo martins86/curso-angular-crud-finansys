@@ -17,32 +17,3 @@ BOOTSTRAP -	https://getbootstrap.com/docs/4.5/components/alerts/
   npm i angular-in-memory-web-api
   npm i chart.js --save
 ```
-
-## Dependencies/Imports:
-
-File: angular.json
-
-```
-			"styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/toastr/build/toastr.min.css",
-              "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/themes/fluent-light/theme.css",
-              "node_modules/primeng/resources/primeng.min.css"
-            ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/chart.js/dist/chart.bundle.js"
-            ]
-```
-
-## Commands
-
-```
-1 - create module/routing categories => ng g m pages/categories --routing
-2 - create componet caterory-list => ng g c pages/categories/caterory-list
-3 - create componet caterory-form => ng g c pages/categories/caterory-form
-4 - create service category => ng g s pages/categories/shared/services/category
-```
