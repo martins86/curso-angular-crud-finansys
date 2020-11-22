@@ -1,4 +1,4 @@
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://www.gitpod.io/#https://github.com/martins86/curso-angular-crud-finansys/)
+# Read [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://www.gitpod.io/#https://github.com/martins86/curso-angular-crud-finansys/)
 
 # Finansys Angular
 
@@ -22,4 +22,6 @@ BOOTSTRAP - https://getbootstrap.com/docs/4.5/components/alerts/
   npm i primeng --save
   npm i primeicons --save
   npm i chart.js --save
+  
+  API - Json-Server (Load in Gitpod)
 ```
