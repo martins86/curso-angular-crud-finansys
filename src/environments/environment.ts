@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlApi: 'http://localhost:3004/api/v1',
+  urlApi: 'https://3004-b5536f25-d7cb-4193-b43d-3621cbece5ce.ws-us02.gitpod.io/',
 };
 
 /*
