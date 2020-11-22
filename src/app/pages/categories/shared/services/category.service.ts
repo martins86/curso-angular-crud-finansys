@@ -25,7 +25,7 @@ export class CategoryService {
     );
   }
 
-  getById(id: number): Observable<CategoryModel[]> {
+  getById(id: number): Observable<CategoryModel> {
     const urlApi = `${this.apiPath}/${id}`;
 
     return this.httpClient.get(urlApi).pipe(
