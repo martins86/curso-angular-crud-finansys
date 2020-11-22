@@ -1,6 +1,0 @@
-{
-  "categories": [
-    { "id": 1, "name": "Moradia", "description": "contas de casa" },
-    { "id": 2, "name": "Carro", "description": "contas do carro" }
-  ]
-}
