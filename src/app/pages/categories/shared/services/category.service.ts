@@ -14,7 +14,7 @@ import { CategoryModel } from './../models/category.model';
 })
 export class CategoryService {
 
-  private apiPath = environment.urlApi + '/categories';
+  private apiPath = environment.urlApi + 'categories';
 
   constructor(private httpClient: HttpClient) { }
 
