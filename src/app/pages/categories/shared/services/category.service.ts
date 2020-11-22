@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError, flatMap } from 'rxjs/operators';
 
+import { environment } from './../../../../../environments/environment';
+
 import { CategoryModel } from './../models/category.model';
 
 
@@ -12,7 +14,7 @@ import { CategoryModel } from './../models/category.model';
 })
 export class CategoryService {
 
-  private apiPath = 'http://localhost:3004/categories';
+  private apiPath = environment.urlApi + '/categories';
 
   constructor(private httpClient: HttpClient) { }
 
