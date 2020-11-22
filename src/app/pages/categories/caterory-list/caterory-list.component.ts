@@ -23,4 +23,17 @@ export class CateroryListComponent implements OnInit {
       error => alert('Erro ao carregar as Categorias, tente novamente.')
     );
   }
+
+  deleteCategory(category: CategoryModel) {
+    const mustDelete = confirm('Deseja realmente excluir este item?');
+
+    if (mustDelete) {
+      this.serviceCategory
+        .delete(category.id)
+        .subscribe(
+          () => this.categories = this.categories.filter(element => element !== category),
+          () => alert('Erro ao tentar excluir.')
+        );
+    }
+  }
 }
