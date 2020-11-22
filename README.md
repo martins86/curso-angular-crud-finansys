@@ -21,6 +21,5 @@ BOOTSTRAP - https://getbootstrap.com/docs/4.5/components/alerts/
   npm i toastr --save
   npm i primeng --save
   npm i primeicons --save
-  npm i angular-in-memory-web-api
   npm i chart.js --save
 ```
