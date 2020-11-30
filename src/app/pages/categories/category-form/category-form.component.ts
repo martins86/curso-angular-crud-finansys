@@ -2,19 +2,19 @@ import { Component, OnInit, AfterContentChecked } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { CategoryModel } from './../shared/models/category.model';
-import { CategoryService } from './../shared/services/category.service';
+import { CategoryModel } from '../shared/models/category.model';
+import { CategoryService } from '../shared/services/category.service';
 
 import { switchMap } from 'rxjs/operators';
 
 import toastr from 'toastr';
 
 @Component({
-  selector: 'app-caterory-form',
-  templateUrl: './caterory-form.component.html',
-  styleUrls: ['./caterory-form.component.css']
+  selector: 'app-category-form',
+  templateUrl: './category-form.component.html',
+  styleUrls: ['./category-form.component.css']
 })
-export class CateroryFormComponent implements OnInit, AfterContentChecked {
+export class CategoryFormComponent implements OnInit, AfterContentChecked {
 
     currentAction: string;
     categoryForm: FormGroup;

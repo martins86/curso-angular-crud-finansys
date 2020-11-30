@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../shared/services/category.service';
 
 @Component({
-  selector: 'app-caterory-list',
-  templateUrl: './caterory-list.component.html',
-  styleUrls: ['./caterory-list.component.css']
+  selector: 'app-category-list',
+  templateUrl: './category-list.component.html',
+  styleUrls: ['./category-list.component.css']
 })
-export class CateroryListComponent implements OnInit {
+export class CategoryListComponent implements OnInit {
 
   categories: CategoryModel[] = [];
 
@@ -24,7 +24,7 @@ export class CateroryListComponent implements OnInit {
     );
   }
 
-  deleteCategory(category: CategoryModel) {
+  deleteCategory(category: CategoryModel): any {
     const mustDelete = confirm('Deseja realmente excluir este item?');
 
     if (mustDelete) {

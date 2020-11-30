@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CateroryListComponent} from './../categories/caterory-list/caterory-list.component';
-import { CateroryFormComponent } from './../categories/caterory-form/caterory-form.component';
+import { CategoryListComponent} from './../categories/category-list/category-list.component';
+import { CategoryFormComponent } from './../categories/category-form/category-form.component';
 
 
 const routes: Routes = [
-  { path: '', component: CateroryListComponent },        // url: categories/
-  { path: 'new', component: CateroryFormComponent},      // url: categories/new
-  { path: ':id/edit', component: CateroryFormComponent}, // url: categories/{:id}/edit
+  { path: '', component: CategoryListComponent },        // url: categories/
+  { path: 'new', component: CategoryFormComponent},      // url: categories/new
+  { path: ':id/edit', component: CategoryFormComponent}, // url: categories/{:id}/edit
 ];
 
 @NgModule({

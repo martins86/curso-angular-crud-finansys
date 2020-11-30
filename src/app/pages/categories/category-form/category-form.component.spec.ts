@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CateroryListComponent } from './caterory-list.component';
+import { CategoryFormComponent } from './category-form.component';
 
-describe('CateroryListComponent', () => {
-  let component: CateroryListComponent;
-  let fixture: ComponentFixture<CateroryListComponent>;
+describe('CategoryFormComponent', () => {
+  let component: CategoryFormComponent;
+  let fixture: ComponentFixture<CategoryFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CateroryListComponent ]
+      declarations: [ CategoryFormComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CateroryListComponent);
+    fixture = TestBed.createComponent(CategoryFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

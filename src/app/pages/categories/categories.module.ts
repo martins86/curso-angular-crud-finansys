@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { CategoriesRoutingModule } from './categories-routing.module';
-import { CateroryListComponent } from './caterory-list/caterory-list.component';
-import { CateroryFormComponent } from './caterory-form/caterory-form.component';
+import { CategoryListComponent } from './category-list/category-list.component';
+import { CategoryFormComponent } from './category-form/category-form.component';
 
 
 @NgModule({
-  declarations: [CateroryListComponent, CateroryFormComponent],
+  declarations: [CategoryListComponent, CategoryFormComponent],
   imports: [
     CommonModule,
     CategoriesRoutingModule,
