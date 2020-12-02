@@ -6,7 +6,7 @@ export class EntryModel {
     public name?: string,
     public desciption?: string,
     public type?: string,
-    public amout?: string,
+    public amount?: string,
     public date?: string,
     public paid?: boolean,
     public categoryId?: number,
