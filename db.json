@@ -10,5 +10,40 @@
       "name": "Carro",
       "description": "contas do carro"
     }
+  ],
+  "entries": [
+    {
+      "id": 1,
+      "name": "Gás",
+      "description": "contas de Gás",
+      "type": "expense",
+      "amount": "65,00",
+      "date": "02/12/2020",
+      "paid": false,
+      "categoryId": 1,
+      "category": "Moradia"
+    },
+    {
+      "id": 2,
+      "name": "Pneu novo",
+      "description": "despesa com carro",
+      "type": "expense",
+      "amount": "1.358,00",
+      "date": "02/12/2020",
+      "paid": true,
+      "categoryId": 1,
+      "category": "Carro"
+    },
+    {
+      "id": 2,
+      "name": "Venda do pneu antigo",
+      "description": "Receita com carro",
+      "type": "renevue",
+      "amount": "15,00",
+      "date": "02/12/2020",
+      "paid": true,
+      "categoryId": 1,
+      "category": "Carro"
+    }
   ]
 }
