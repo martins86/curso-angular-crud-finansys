@@ -49,7 +49,7 @@
           <label for="name">Nome</label>
           <input type="text" class="form-control" id="name" formControlName="name">
 
-          <div class="text-dager" *ngIf="categoryForm.get('name').invalid && categoryForm.get('name').touched">
+          <div class="text-danger" *ngIf="categoryForm.get('name').invalid && categoryForm.get('name').touched">
             <div *ngIf="categoryForm.get('name').errors.required">*Dado Obrigatório.</div>
             <div *ngIf="categoryForm.get('name').errors.minlength">*Deve ser maior que 2 caracteres.</div>
           </div>
