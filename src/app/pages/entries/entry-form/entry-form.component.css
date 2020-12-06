@@ -1,0 +1,6 @@
+p-calendar#date,
+p-calendar#date input.form-control.p-inputtext.p-component,
+p-calendar#date span {
+    display: block;
+    width: 100%;
+}
