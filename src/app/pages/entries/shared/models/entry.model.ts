@@ -2,7 +2,7 @@ import { CategoryModel } from './../../../categories/shared/models/category.mode
 
 export class EntryModel {
   constructor(
-    public id: number,
+    public id?: number,
     public name?: string,
     public desciption?: string,
     public type?: string,
