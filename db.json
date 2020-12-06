@@ -26,24 +26,12 @@
     {
       "id": 2,
       "name": "Pneu novo",
-      "description": "despesa com carro",
       "type": "expense",
-      "amount": "1.358,00",
-      "date": "02/12/2020",
+      "amount": "1350,00",
+      "date": "16/12/2020",
       "paid": true,
-      "categoryId": 1,
-      "category": "Carro"
-    },
-    {
-      "id": 2,
-      "name": "Venda do pneu antigo",
-      "description": "Receita com carro",
-      "type": "renevue",
-      "amount": "15,00",
-      "date": "02/12/2020",
-      "paid": true,
-      "categoryId": 1,
-      "category": "Carro"
+      "categoryId": 2,
+      "description": "despesa com carro"
     }
   ]
 }
