@@ -8,6 +8,8 @@ import { environment } from './../../../../../environments/environment';
 
 import { EntryModel } from './../models/entry.model';
 
+import { CategoryService } from './../../../categories/shared/services/category.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +18,7 @@ export class EntryService {
 
   private apiPath = environment.urlApi + 'entries';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private categorySevice: CategoryService) { }
 
   getAll(): Observable<EntryModel[]> {
     return this.httpClient.get(this.apiPath).pipe(
@@ -34,19 +36,31 @@ export class EntryService {
     );
   }
 
-  create(Entry: EntryModel): Observable<EntryModel> {
-    return this.httpClient.post(this.apiPath, Entry).pipe(
-      map(this.jsonDataToEntry),
-      catchError(this.handleError)
+  create(entry: EntryModel): Observable<EntryModel> {
+    return this.categorySevice.getById(entry.categoryId).pipe(
+      flatMap(category => {
+        entry.category = category;
+
+        return this.httpClient.post(this.apiPath, entry).pipe(
+          map(this.jsonDataToEntry),
+          catchError(this.handleError)
+        );
+      })
     );
   }
 
-  update(Entry: EntryModel): Observable<EntryModel> {
-    const urlApi = `${this.apiPath}/${Entry.id}`;
+  update(entry: EntryModel): Observable<EntryModel> {
+    const urlApi = `${this.apiPath}/${entry.id}`;
 
-    return this.httpClient.put(urlApi, Entry).pipe(
-      map(() => Entry),
-      catchError(this.handleError)
+    return this.categorySevice.getById(entry.categoryId).pipe(
+      flatMap(category => {
+        entry.category = category;
+
+        return this.httpClient.put(urlApi, entry).pipe(
+          map(() => entry),
+          catchError(this.handleError)
+        );
+      })
     );
   }
 
