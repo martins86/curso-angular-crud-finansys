@@ -19,7 +19,7 @@ export class EntryListComponent implements OnInit {
 
   getAllCategories(): any {
     this.serviceEntry.getAll().subscribe(
-      result => this.entries = result,
+      result => this.entries = result.sort((a, b) => b.id - a.id),
       error => alert('Erro ao carregar os Lançamentos, tente novamente.')
     );
   }

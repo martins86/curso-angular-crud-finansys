@@ -46,7 +46,7 @@
         {{ entry.category.name }}
       </td>
       <td class="text-right">
-        <small [class.text-success]="entry.type == 'renevue'" [class.text-danger]="entry.type == 'expense'"> {{ entry.amount }} </small>
+        <small [class.text-success]="entry.type == 'revenue'" [class.text-danger]="entry.type == 'expense'"> {{ entry.amount }} </small>
         <br>
         <span class="badge badge-light"> {{ entry.paidText }} </span>
       </td>
