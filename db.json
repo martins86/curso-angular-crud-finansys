@@ -15,23 +15,17 @@
     {
       "id": 1,
       "name": "Gás",
-      "description": "contas de Gás",
       "type": "expense",
-      "amount": "65,00",
-      "date": "02/12/2020",
-      "paid": false,
-      "categoryId": 1,
-      "category": "Moradia"
-    },
-    {
-      "id": 2,
-      "name": "Pneu novo",
-      "type": "expense",
-      "amount": "1350,00",
-      "date": "16/12/2020",
+      "amount": "23,00",
+      "date": "08/12/2020",
       "paid": true,
-      "categoryId": 2,
-      "description": "despesa com carro"
+      "categoryId": "1",
+      "category": {
+        "id": 1,
+        "name": "Moradia",
+        "description": "contas de casa"
+      },
+      "description": "contas de casas"
     }
   ]
 }
