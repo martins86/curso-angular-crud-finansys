@@ -84,6 +84,7 @@
         <div class="form-group col-md-2">
           <label for="date">Data</label>
           <p-calendar
+            class="d-block"
             id="date"
             name="date"
             ariaLabelledBy="date"
@@ -103,7 +104,7 @@
 
       <div class="form row">
         <div class="form-group col-md-2">
-          <label for="paid">Pago</label>
+          <label class="d-block"for="paid">Pago</label>
           <div class="btn-group">
             <label (click)="entryForm.get('paid').setValue(true)" [class.active]="entryForm.get('paid').value == true" class="btn btn-outline-info">
               Pago
