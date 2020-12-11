@@ -9,6 +9,11 @@
       "id": 2,
       "name": "Carro",
       "description": "contas do carro"
+    },
+    {
+      "id": 3,
+      "name": "Aulas",
+      "description": "Despesas com Cursos"
     }
   ],
   "entries": [
@@ -26,6 +31,21 @@
         "description": "contas de casa"
       },
       "description": "contas de casas"
+    },
+    {
+      "id": 2,
+      "name": "Thiago Martins de Freitas",
+      "type": "revenue",
+      "amount": "1200,00",
+      "date": "10/12/2020",
+      "paid": true,
+      "categoryId": "3",
+      "category": {
+        "id": 3,
+        "name": "Aulas",
+        "description": "Despesas com Cursos"
+      },
+      "description": "contas do carros 3"
     }
   ]
 }
