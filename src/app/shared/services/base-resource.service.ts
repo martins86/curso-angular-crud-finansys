@@ -13,13 +13,16 @@ import { BaseResourceModel } from '../models/base-resource-model';
 export abstract class BaseResourceService<T extends BaseResourceModel> {
   protected httpClient: HttpClient;
 
-  constructor(protected apiPath: string, protected injector: Injector) {
+  constructor(
+    protected apiPath: string,
+    protected injector: Injector,
+    protected jsonDataToResourceFn: (jsonData: any) => T) {
     this.httpClient = injector.get(HttpClient);
    }
 
   getAll(): Observable<T[]> {
     return this.httpClient.get(this.apiPath).pipe(
-      map(this.jsonDataToResources),
+      map(this.jsonDataToResources.bind(this)),
       catchError(this.handleError)
     );
   }
@@ -28,14 +31,14 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
     const urlApi = `${this.apiPath}/${id}`;
 
     return this.httpClient.get(urlApi).pipe(
-      map(this.jsonDataToResource),
+      map(this.jsonDataToResources.bind(this)),
       catchError(this.handleError)
     );
   }
 
   create(resource: T): Observable<T> {
     return this.httpClient.post(this.apiPath, resource).pipe(
-      map(this.jsonDataToResource),
+      map(this.jsonDataToResources.bind(this)),
       catchError(this.handleError)
     );
   }
@@ -60,12 +63,15 @@ export abstract class BaseResourceService<T extends BaseResourceModel> {
 
 
   protected jsonDataToResource(jsonData: any): T {
-    return jsonData as T;
+    return this.jsonDataToResourceFn(jsonData);
   }
 
   protected jsonDataToResources(jsonData: any[]): T[] {
     const resources: T[] = [];
-    jsonData.forEach(element => resources.push(element as T));
+    jsonData.forEach(
+      element => resources
+        .push( this.jsonDataToResourceFn(element) )
+    );
     return resources;
   }
 
