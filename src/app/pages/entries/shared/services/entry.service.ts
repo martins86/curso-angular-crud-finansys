@@ -1,7 +1,7 @@
 import { Injectable, Injector } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
+import { mergeMap, catchError } from 'rxjs/operators';
 
 import { environment } from './../../../../../environments/environment';
 
@@ -21,22 +21,20 @@ export class EntryService extends BaseResourceService<EntryModel> {
   }
 
   create(entry: EntryModel): Observable<EntryModel> {
-    return this.categorySevice.getById(entry.categoryId).pipe(
-      mergeMap(category => {
-        entry.category = category;
-
-        return super.create(entry);
-      })
-    );
+    return this.setCategoryAndSendToServer(entry, super.create.bind(this));
   }
 
   update(entry: EntryModel): Observable<EntryModel> {
+    return this.setCategoryAndSendToServer(entry, super.update.bind(this));
+  }
+
+  protected setCategoryAndSendToServer(entry: EntryModel, sendFn: any): Observable<EntryModel> {
     return this.categorySevice.getById(entry.categoryId).pipe(
       mergeMap(category => {
         entry.category = category;
-
-        return super.update(entry);
-      })
+        return sendFn(entry);
+      }),
+      catchError(this.handleError)
     );
   }
 }
