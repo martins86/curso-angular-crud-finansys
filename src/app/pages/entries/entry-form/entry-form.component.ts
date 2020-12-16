@@ -133,8 +133,8 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
   }
 
   private createEntry(): any {
-    const entry: EntryModel = EntryModel.fromJson(this.entryForm.value);
-    this.entryService.create(entry)
+    const newEntry: EntryModel = EntryModel.fromJson(this.entryForm.value);
+    this.entryService.create(newEntry)
       .subscribe(
         entry => this.actionsForSuccess(entry),
         error => this.actionsForError(error)
@@ -142,8 +142,8 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
   }
 
   private updateEntry(): any {
-    const entry: EntryModel = EntryModel.fromJson(this.entryForm.value);
-    this.entryService.update(entry)
+    const upEntry: EntryModel = EntryModel.fromJson(this.entryForm.value);
+    this.entryService.update(upEntry)
       .subscribe(
         entry => this.actionsForSuccess(entry),
         error => this.actionsForError(error)
@@ -161,7 +161,7 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
     toastr.error('Erro ao processar a sua solicitação!');
     this.submittingForm = false;
 
-    if(error.status === 422) {
+    if (error.status === 422) {
       this.serverErrorMessages = JSON.parse(error._body).errors;
     } else {
       this.serverErrorMessages = ['Falha na comunicação com o servidor, Por Favor, tente novamente.'];
