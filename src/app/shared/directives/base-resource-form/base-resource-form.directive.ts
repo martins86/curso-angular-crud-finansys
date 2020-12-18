@@ -114,6 +114,12 @@ export abstract class BaseResourceFormDirective<T extends BaseResourceModel> imp
 
   protected actionsForSuccess(resource: T): void {
     toastr.success('Solicitação processada com sucesso!');
+
+    const baseComponentPath: string = this.route.snapshot.parent.url[0].path;
+
+    this.router.navigateByUrl(baseComponentPath, {skipLocationChange: true}).then(
+      () => this.router.navigate([baseComponentPath])
+    );
   }
 
   protected actionsForError(error): void {
