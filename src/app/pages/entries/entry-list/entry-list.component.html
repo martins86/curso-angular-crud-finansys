@@ -6,16 +6,9 @@
   </div>
 </div>
 
-<nav>
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a routerLink="/">Inicio</a>
-    </li>
-    <li class="breadcrumb-item active">
-      Lançamentos
-    </li>
-  </ol>
-</nav>
+<app-bread-crumb
+  [items]="[{text: 'Lançamento'}]"
+></app-bread-crumb>
 
 <div class="row mb-4">
   <div class="col-md"></div>
