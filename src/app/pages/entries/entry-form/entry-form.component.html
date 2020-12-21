@@ -17,12 +17,7 @@
 
     <div class="card-body">
 
-      <div class="alert alert-danger" *ngIf="serverErrorMessages">
-        <strong> Erro no Servidor: </strong>
-        <ul>
-          <li *ngFor="let error of serverErrorMessages"> {{ error }} </li>
-        </ul>
-      </div>
+      <app-server-error-messages [server-error-messages]="serverErrorMessages"></app-server-error-messages>
 
       <div class="form row">
         <div class="form-group col-md-2">
@@ -31,21 +26,16 @@
             <option *ngFor="let option of typeOptions" [value]="option.value"> {{ option.text }} </option>
           </select>
 
-          <div class="text-danger" *ngIf="resourceForm.get('type').invalid && resourceForm.get('type').touched">
-            <div *ngIf="resourceForm.get('type').errors.required">*Dado Obrigatório.</div>
-          </div>
-        </div>
+          <app-form-field-error [form-control]="resourceForm.get('type')"></app-form-field-error>
 
+        </div>
         <div class="form-group col-md-5">
           <label for="name">Lançamento</label>
           <input type="text" class="form-control" id="name" formControlName="name">
 
-          <div class="text-danger" *ngIf="resourceForm.get('name').invalid && resourceForm.get('name').touched">
-            <div *ngIf="resourceForm.get('name').errors.required">*Dado Obrigatório.</div>
-            <div *ngIf="resourceForm.get('name').errors.minlength">*Deve ser maior que 2 caracteres.</div>
-          </div>
-        </div>
+          <app-form-field-error [form-control]="resourceForm.get('name')"></app-form-field-error>
 
+        </div>
         <div class="form-group col-md-3">
           <label for="amount">Valor</label>
           <div class="input-group">
@@ -55,11 +45,9 @@
             <input [imask]="imaskConfig" type="text" class="form-control text-right" id="amount" formControlName="amount">
           </div>
 
-          <div class="text-danger" *ngIf="resourceForm.get('amount').invalid && resourceForm.get('amount').touched">
-            <div *ngIf="resourceForm.get('amount').errors.required">*Dado Obrigatório.</div>
-          </div>
-        </div>
+          <app-form-field-error [form-control]="resourceForm.get('amount')"></app-form-field-error>
 
+        </div>
         <div class="form-group col-md-2">
           <label for="date">Data</label>
           <p-calendar
@@ -75,15 +63,13 @@
             [showButtonBar]="true">
             </p-calendar>
 
-          <div class="text-danger" *ngIf="resourceForm.get('date').invalid && resourceForm.get('date').touched">
-            <div *ngIf="resourceForm.get('date').errors.required">*Dado Obrigatório.</div>
-          </div>
-        </div>
-      </div>
+          <app-form-field-error [form-control]="resourceForm.get('date')"></app-form-field-error>
 
+      </div>
+      </div>
       <div class="form row">
         <div class="form-group col-md-2">
-          <label class="d-block"for="paid">Pago</label>
+          <label class="d-block" for="paid">Pago</label>
           <div class="btn-group">
             <label (click)="resourceForm.get('paid').setValue(true)" [class.active]="resourceForm.get('paid').value == true" class="btn btn-outline-info">
               Pago
@@ -93,20 +79,17 @@
             </label>
           </div>
 
-          <div class="text-danger" *ngIf="resourceForm.get('amount').invalid && resourceForm.get('amount').touched">
-            <div *ngIf="resourceForm.get('amount').errors.required">*Dado Obrigatório.</div>
-          </div>
-        </div>
+          <app-form-field-error [form-control]="resourceForm.get('paid')"></app-form-field-error>
 
+        </div>
         <div class="form-group col-md-3">
           <label for="categoryId">Categoria</label>
           <select name="categoryId" class="form-control" id="categoryId" formControlName="categoryId">
             <option *ngFor="let category of categories" [value]="category.id"> {{ category.name }} </option>
           </select>
 
-          <div class="text-danger" *ngIf="resourceForm.get('categoryId').invalid && resourceForm.get('categoryId').touched">
-            <div *ngIf="resourceForm.get('categoryId').errors.required">*Dado Obrigatório.</div>
-          </div>
+          <app-form-field-error [form-control]="resourceForm.get('categoryId')"></app-form-field-error>
+
         </div>
 
         <div class="form-group col-md-7">
