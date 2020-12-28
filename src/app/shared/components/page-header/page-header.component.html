@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<div class="row mb-3 text-right">
+<div *ngIf="showButton" class="row mb-3 text-right">
   <div class="col-md">
     <a [routerLink]="buttonLink" class="btn" [ngClass]="buttonClass">
      {{ buttonText }}
