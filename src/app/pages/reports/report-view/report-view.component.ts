@@ -30,13 +30,7 @@ export class ReportViewComponent implements OnInit {
   ];
 
   years = [
-    {value: 2015, text: '2015'},
-    {value: 2016, text: '2016'},
-    {value: 2017, text: '2017'},
-    {value: 2018, text: '2018'},
-    {value: 2019, text: '2019'},
-    {value: 2020, text: '2020'},
-    {value: 2021, text: '2021'}
+    {value: 2020, text: '2020'}
   ];
 
   expenseTotal = 0;
@@ -94,7 +88,8 @@ export class ReportViewComponent implements OnInit {
 
     this.entries.forEach(entry => {
       if (entry.type === 'revenue') {
-        revenueTotal += currencyFormatter.unformat(entry.amount, { code: 'BRL' });
+        revenueTotal += currencyFormatter.unformat(entry.amount, { code: 'BRL' }
+        );
       } else {
         expenseTotal += currencyFormatter.unformat(entry.amount, { code: 'BRL' });
       }
@@ -107,7 +102,7 @@ export class ReportViewComponent implements OnInit {
 
   private setChartData(): void {
     this.revenueChartData = this.getChartData('revenue', 'Gráfico de Receitas', '#9CCC65');
-    this.expenseChartData = this.getChartData('expense', 'Gráfico de Despesas', '#E03131');
+    this.expenseChartData = this.getChartData('expense', 'Gráfico de Despesas', '#e03131');
   }
 
   private getChartData(entryType: string, title: string, color: string): any {
@@ -115,8 +110,8 @@ export class ReportViewComponent implements OnInit {
 
     this.categories.forEach(category => {
       const filteredEntries = this.entries.filter(
-        entry => (entry.categoryId === category.id) &&
-        (entry.type === entryType)
+        entry => (entry.categoryId == category.id) &&
+        (entry.type == entryType)
       );
 
       if (filteredEntries.length > 0) {
@@ -126,7 +121,7 @@ export class ReportViewComponent implements OnInit {
 
         chartData.push({
           categoryName: category.name,
-          totalAmout: totalAmount
+          totalAmount: totalAmount
         });
       }
     });
