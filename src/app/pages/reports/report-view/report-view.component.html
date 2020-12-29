@@ -18,7 +18,7 @@
       <div class="form-group col-md-7">
         <label for="month">Mês</label>
         <select #month name="month" id="month" class="form-control">
-          <option value="0"> Selecione um Mês </option>
+          <option value=""> Selecione um Mês </option>
           <option *ngFor="let month of months"
           value="{{ month.value }}"> {{ month.text }} </option>
         </select>
@@ -27,7 +27,7 @@
       <div class="form-group col-md-5">
         <label for="year">Ano</label>
         <select #year name="year" id="year" class="form-control">
-          <option value="0"> Selecione um Ano </option>
+          <option value=""> Selecione um Ano </option>
           <option *ngFor="let year of years"
           value="{{ year.value }}"> {{ year.text }} </option>
         </select>
