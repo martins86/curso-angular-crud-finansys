@@ -16,16 +16,16 @@ export class EntryModel extends BaseResourceModel {
     super();
   }
 
-    static types = {
-      expense: 'Despesa',
-      revenue: 'Receita'
-    };
+  static types = {
+    expense: 'Despesa',
+    revenue: 'Receita'
+  };
 
-    static fromJson(jsonData: any): EntryModel {
-      return Object.assign(new EntryModel(), jsonData);
-    }
+  static fromJson(jsonData: any): EntryModel {
+    return Object.assign(new EntryModel(), jsonData);
+  }
 
-    get paidText(): string {
-      return this.paid ? 'Pago' : 'Pendente';
-    }
+  get paidText(): string {
+    return this.paid ? 'Pago' : 'Pendente';
+  }
 }
