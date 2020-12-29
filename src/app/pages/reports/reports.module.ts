@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from './../../shared/shared.module';
 
+import { ChartModule } from 'primeng/chart';
+
 import { ReportsRoutingModule } from './reports-routing.module';
 
 import { ReportViewComponent } from './report-view/report-view.component';
@@ -10,6 +12,7 @@ import { ReportViewComponent } from './report-view/report-view.component';
   declarations: [ReportViewComponent],
   imports: [
     SharedModule,
+    ChartModule,
     ReportsRoutingModule
   ]
 })
